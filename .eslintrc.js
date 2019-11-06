@@ -31,6 +31,7 @@ module.exports = {
       {extensions: ['.jsx', '.js']}
     ],
     'import/prefer-default-export': 'off',
+    'no-param-reassign': 'off',// desativa erro quando editar parametrod de uma função
     'no-console': ["error", {allow: ["tron"]}]
 
   },
