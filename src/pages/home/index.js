@@ -14,7 +14,7 @@ class Home extends Component {
     // para formatar os valores para real BR
     const data = response.data.map(product => ({
       ...product,
-      preceFormatted: formatPrice(product.price),
+      priceFormatted: formatPrice(product.price),
     }));
 
     this.setState({ products: data });
@@ -38,7 +38,7 @@ class Home extends Component {
           <li key={product.id}>
             <img src={product.image} alt={product.title} />
             <strong>{product.title}</strong>
-            <span>{product.preceFormatted}</span>
+            <span>{product.priceFormatted}</span>
 
             <button type="button" onClick={() => this.handleAddProduc(product)}>
               <div>

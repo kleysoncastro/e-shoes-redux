@@ -7,7 +7,6 @@ import { Container, Cart } from './style';
 import logo from '../../assets/images/logo.png';
 // reduce como parametro
 function Header({ cart }) {
-  console.log(cart);
   return (
     <Container>
       <Link to="/">
