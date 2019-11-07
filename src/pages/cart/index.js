@@ -11,13 +11,13 @@ import { Container, ProductTable, Total } from './styles';
 import * as ActionCart from '../../store/mudules/cart/actions';
 import { formatPrice } from '../../util/format';
 
-function Cart({ cart, removeFromCart, updateAmout, total }) {
+function Cart({ cart, removeFromCart, updateAmoutRequest, total }) {
   function incremet(product) {
-    updateAmout(product.id, product.amount + 1);
+    updateAmoutRequest(product.id, product.amount + 1);
   }
 
   function decrement(product) {
-    updateAmout(product.id, product.amount - 1);
+    updateAmoutRequest(product.id, product.amount - 1);
   }
 
   return (
