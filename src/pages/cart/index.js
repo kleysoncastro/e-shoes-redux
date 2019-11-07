@@ -9,8 +9,9 @@ import {
 import { Container, ProductTable, Total } from './styles';
 
 import * as ActionCart from '../../store/mudules/cart/actions';
+import { formatPrice } from '../../util/format';
 
-function Cart({ cart, removeFromCart, updateAmout }) {
+function Cart({ cart, removeFromCart, updateAmout, total }) {
   function incremet(product) {
     updateAmout(product.id, product.amount + 1);
   }
@@ -56,7 +57,7 @@ function Cart({ cart, removeFromCart, updateAmout }) {
                 </div>
               </td>
               <td>
-                <strong>R$259.80</strong>
+                <strong>{product.subtotal}</strong>
               </td>
               <td>
                 <button
@@ -75,7 +76,7 @@ function Cart({ cart, removeFromCart, updateAmout }) {
 
         <Total>
           <span>Total</span>
-          <strong>R$1234.50</strong>
+          <strong>{total}</strong>
         </Total>
       </footer>
     </Container>
@@ -86,7 +87,15 @@ const mapDispatchToProps = dispatch => bindActionCreators(ActionCart, dispatch);
 
 // converte reduce em props da aplicação
 const mapStateToPorps = state => ({
-  cart: state.cart,
+  cart: state.cart.map(product => ({
+    ...product,
+    subtotal: formatPrice(product.price * product.amount),
+  })),
+  total: formatPrice(
+    state.cart.reduce((total, product) => {
+      return total + product.price * product.amount;
+    }, 0)
+  ),
 });
 
 export default connect(
