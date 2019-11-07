@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+# In the project directory, you can run:
 
 ### `yarn`
 
@@ -22,3 +22,7 @@ To start json-server test server
 
 
 ### `project image`
+
+<img align="center" width="1200" height="700" src="https://github.com/kleysoncastro/imagem/blob/master/omnistack/e-shoes1.png">
+
+<img align="center" width="1200" height="700" src="https://github.com/kleysoncastro/imagem/blob/master/omnistack/e-shoes2.png">
